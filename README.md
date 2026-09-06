@@ -59,8 +59,6 @@ In late December 2014, the state of Kelantan in Peninsular Malaysia suffered an 
 
 Floodwaters reached heights over 10 meters in districts like Manek Urai, Kuala Krai, Gua Musang, and Kota Bharu, completely submerging two-story homes, schools, and relief centers. More than 200,000 residents were displaced. The flood inundated electrical substations and drowned cellular base stations. Fiber lines snapped and landlines died, plunging entire districts into a total telecommunications blackout for days.
 
-First responders, volunteer boat rescue units, and emergency operations centers (Pusat Kawalan Operasi Bencana - PKOB) lost all communication with isolated victims and rescue boats in the field.
-
 MeshBeacon was developed from the lessons of the 2014 Kelantan floods. Commercial cellular networks fail when major natural disasters strike. MeshBeacon delivers independent, low-power LoRa mesh connectivity coupled with an offline-first operations console. It runs locally without internet, renders maps from local MBTiles storage, and ensures continuous operational coordination when all commercial infrastructure collapses.
 
 ---

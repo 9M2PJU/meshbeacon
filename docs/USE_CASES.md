@@ -11,7 +11,7 @@ In December 2014, the state of Kelantan on the east coast of Peninsular Malaysia
 ### What Happened During *Bah Kuning*
 1. **Unprecedented Water Levels**: Relentless torrential rain from the Northeast Monsoon caused the Galas, Lebir, and Kelantan rivers to swell simultaneously. Floodwaters rose above 10 meters in places like Manek Urai and Kuala Krai, submerging whole two-story buildings, hospitals, and primary evacuation shelters.
 2. **Infrastructure Collapse**: Electrical substations flooded and shut down. Cellular base transceiver stations (BTS) lost power or were submerged under water. Fiber backhaul lines snapped, and cellular signals vanished completely across entire districts.
-3. **Information Blackout**: Over 200,000 displaced people were trapped on rooftops and isolated hills. First responders, civil defense personnel, and emergency command posts (Pusat Kawalan Operasi Bencana - PKOB) could not communicate with rescue boats, track flood vectors, or identify where medical emergencies were occurring.
+3. **Information Blackout**: Over 200,000 displaced people were trapped on rooftops and isolated high ground across the state without real-time situational awareness or centralized telemetry.
 
 ### The Architectural Lesson
 Natural disasters destroy commercial infrastructure precisely when reliable communication is most critical. MeshBeacon was built to address this reality:
