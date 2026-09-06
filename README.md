@@ -20,6 +20,19 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.4-777BB4?style=flat&logo=php&logoColor=white" alt="PHP 8.4">
+  <img src="https://img.shields.io/badge/Laravel-12.x-FF2D20?style=flat&logo=laravel&logoColor=white" alt="Laravel 12">
+  <img src="https://img.shields.io/badge/Livewire-3.x-FB70A9?style=flat&logo=livewire&logoColor=white" alt="Livewire 3">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/Docker-Multi--Arch-2496ED?style=flat&logo=docker&logoColor=white" alt="Docker Multi-Arch">
+  <img src="https://img.shields.io/badge/MQTT-Mosquitto-3C5280?style=flat&logo=eclipse-mosquitto&logoColor=white" alt="MQTT Mosquitto">
+  <img src="https://img.shields.io/badge/LoRa-ClusterDuck_Protocol-FCC624?style=flat" alt="LoRa CDP">
+  <img src="https://img.shields.io/badge/TAK-CoT_Bridge-00599C?style=flat" alt="TAK CoT Bridge">
+</p>
+
+<p align="center">
+  <a href="#origins-built-from-the-2014-kelantan-flood-bah-kuning">Origins</a> |
+  <a href="#disaster-operations--use-cases">Use Cases</a> |
   <a href="#choose-a-deployment">Deployments</a> |
   <a href="#quick-install">Install</a> |
   <a href="#pre-built-docker-images">Docker Images</a> |
@@ -37,6 +50,34 @@
 </p>
 
 > MeshBeacon connects ClusterDuck Protocol (MamaDuck, PapaDuck) LoRa deployments to a high-performance Laravel operations console. It stores events locally, turns SOS alerts into actionable incidents, renders tactical maps offline, and synchronizes upstream to central servers when connectivity is restored.
+
+---
+
+## Origins: Built from the 2014 Kelantan Flood (*Bah Kuning*)
+
+In late December 2014, the state of Kelantan in Peninsular Malaysia suffered an unprecedented disaster known locally as **Bah Kuning** (The Yellow Flood). Heavy northeast monsoon rains caused rivers across the state to swell simultaneously, carrying tons of yellow mud and silt down from interior catchments.
+
+Floodwaters reached heights over 10 meters in districts like Manek Urai, Kuala Krai, Gua Musang, and Kota Bharu, completely submerging two-story homes, schools, and relief centers. More than 200,000 residents were displaced. The flood inundated electrical substations and drowned cellular base stations. Fiber lines snapped and landlines died, plunging entire districts into a total telecommunications blackout for days.
+
+First responders, volunteer boat rescue units, and emergency operations centers (Pusat Kawalan Operasi Bencana - PKOB) lost all communication with isolated victims and rescue boats in the field.
+
+MeshBeacon was developed from the lessons of the 2014 Kelantan floods. Commercial cellular networks fail when major natural disasters strike. MeshBeacon delivers independent, low-power LoRa mesh connectivity coupled with an offline-first operations console. It runs locally without internet, renders maps from local MBTiles storage, and ensures continuous operational coordination when all commercial infrastructure collapses.
+
+---
+
+## Disaster operations & use cases
+
+MeshBeacon addresses critical emergency scenarios across disaster response, remote search operations, and tactical relief:
+
+| Use Case | Operational Scenario | How MeshBeacon Solves It |
+| --- | --- | --- |
+| **Monsoon & Flash Floods** | Telecommunication towers lose power or are submerged; road access is cut off. | Battery-powered MamaDuck and PapaDuck nodes deploy on elevated ground. Rescue boats and relief centers transmit SOS and water-level telemetry directly to the local MeshBeacon console without internet access. |
+| **Search & Rescue (SAR)** | Dense tropical rainforests, mountain ranges, or maritime zones with zero cellular coverage. | Search teams carry portable LoRa beacons. MeshBeacon tracks team coordinates, displays paths on offline topographic maps, and streams Cursor-on-Target (CoT) XML over UDP to ATAK/WinTAK tablets. |
+| **Emergency Operations Centers (PKOB / EOC)** | District disaster management centers coordinate multi-agency relief teams (APM, JBPM, Police, NGOs). | The `/kiosk` wallboard provides automated, live situation monitors on command room displays. Operators assign responders, record triage notes, and track duck battery and RSSI health. |
+| **Remote River Basin Early Warning** | Isolated upstream villages require early warning of flash floods. | Solar-powered sensor ducks monitor river rise rates. When thresholds are breached, the local rules engine triggers emergency broadcasts across the mesh and alerts Telegram responder channels. |
+| **Hybrid Store-and-Forward Operations** | Field command posts operate during outages but need to report records to state or national headquarters. | Field nodes log incidents in local SQLite storage. When satellite or cellular uplinks reconnect, background workers automatically push records upstream via idempotent `POST /api/ingest`. |
+
+Read the complete scenario guide in [docs/USE_CASES.md](docs/USE_CASES.md).
 
 ---
 
@@ -422,6 +463,7 @@ php artisan test --filter=DashboardReadonlyTest
 | `docs/OFFLINE_MAPS.md` | Guide to creating and loading raster MBTiles |
 | `docs/TAK_BRIDGE.md` | Standalone TAK Cursor-on-Target (CoT) integration guide |
 | `docs/OPENTAK_BRIDGE.md` | OpenTAKServer encrypted plugin bridge (`ots-meshbeacon-bridge`) guide |
+| `docs/USE_CASES.md` | Disaster response scenarios and Kelantan flood case study |
 
 ---
 
